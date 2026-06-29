@@ -8,7 +8,8 @@ import {
   ClipboardList, 
   Paperclip, 
   Settings, 
-  BellRing
+  BellRing,
+  X
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -20,19 +21,35 @@ const navigation = [
   { name: "Anexos y Soportes", href: "/anexos", icon: Paperclip },
 ];
 
-export function Sidebar() {
+interface SidebarProps {
+  onClose?: () => void;
+}
+
+export function Sidebar({ onClose }: SidebarProps) {
   const pathname = usePathname();
 
   return (
     <div className="flex h-full w-64 flex-col bg-white dark:bg-slate-900 border-r border-border/40 shadow-sm transition-all duration-300">
-      <div className="flex h-16 items-center justify-between px-6 border-b border-border/40">
+      <div className="flex h-16 items-center justify-between px-6 border-b border-border/40 shrink-0">
         <h1 className="text-xl font-bold text-primary flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center shadow-sm">
             <span className="text-lg">B</span>
           </div>
-          BPM
+          <span className="hidden md:block">BPM</span>
         </h1>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
+          {onClose && (
+            <button 
+              onClick={onClose}
+              className="md:hidden p-2 -mr-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          )}
+        </div>
       </div>
       
       <div className="flex-1 overflow-y-auto py-6 px-4">

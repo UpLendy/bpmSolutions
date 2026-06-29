@@ -22,7 +22,7 @@ const dataCategorias = [
 
 export default function Cumplimiento() {
   return (
-    <div className="p-8 max-w-7xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="p-4 md:p-8 max-w-7xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <Link 
         href="/" 
         className="inline-flex items-center text-sm font-medium text-slate-500 hover:text-emerald-600 transition-colors"

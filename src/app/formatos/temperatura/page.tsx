@@ -19,7 +19,7 @@ export default function RegistroTemperatura() {
   };
 
   return (
-    <div className="p-8 max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="p-4 md:p-8 max-w-7xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <Link 
         href="/formatos" 
         className="inline-flex items-center text-sm font-medium text-slate-500 hover:text-primary transition-colors"
