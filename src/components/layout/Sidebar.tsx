@@ -11,6 +11,7 @@ import {
   BellRing
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
@@ -24,13 +25,14 @@ export function Sidebar() {
 
   return (
     <div className="flex h-full w-64 flex-col bg-white dark:bg-slate-900 border-r border-border/40 shadow-sm transition-all duration-300">
-      <div className="flex h-16 items-center px-6 border-b border-border/40">
+      <div className="flex h-16 items-center justify-between px-6 border-b border-border/40">
         <h1 className="text-xl font-bold text-primary flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center shadow-sm">
             <span className="text-lg">B</span>
           </div>
-          BPM Consult
+          BPM
         </h1>
+        <ThemeToggle />
       </div>
       
       <div className="flex-1 overflow-y-auto py-6 px-4">
@@ -78,7 +80,7 @@ export function Sidebar() {
           href="/settings"
           className="group flex items-center px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
         >
-          <Settings className="mr-3 h-5 w-5 text-slate-400 group-hover:text-slate-500" />
+          <Settings className="mr-3 h-5 w-5 text-slate-400 group-hover:text-slate-500 transition-transform group-hover:rotate-45 duration-300" />
           Configuración
         </Link>
       </div>
